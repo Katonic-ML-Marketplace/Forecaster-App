@@ -37,13 +37,13 @@ def add_header(r):
 
 # Flask App
 
-@app.route('/app/')
+@app.route('/')
 def index():
     return render_template('build-forecast-v3.html') # Application
 
 @app.route('/')
 def about():
-    return render_template('forecaster.html') # Product Page
+    return render_template('templates/forecaster.html') # Product Page
 
 
 @socketio.on('connection_msg')
