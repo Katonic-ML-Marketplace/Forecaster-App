@@ -1,11 +1,14 @@
-pandas==1.5.1
-pystan==2.19.1.1
-fbprophet== 0.7.1
-eventlet==0.33.0
+DateTime==4.3
+eventlet==0.24.1
 Flask==2.1.0
-Flask-SocketIO==5.3.1
-gunicorn==20.1.0
-numpy==1.23.4
-python-engineio==4.3.4
-python-socketio==5.7.2
+pystan==2.19.1.1
+Flask-SocketIO==4.3.2
+fbprophet==0.7.1
+gunicorn==19.9.0
+numpy==1.20.3
+pandas==1.5.1
+python-dateutil==2.8.1
+python-engineio==3.13.2
+python-socketio==4.6.0
 requests==2.28.1
+Werkzeug==2.0
