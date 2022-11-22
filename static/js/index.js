@@ -1,0 +1,20 @@
+$(document).ready(function(){
+
+    // sending a connect request to the server.
+    var socket = io.connect('http://localhost:8050');
+
+    // An event handler for a change of value 
+    $('input.sync').on('input', function(event) {
+        socket.emit('Slider value changed', {who: $(this).attr('id'), data: $(this).val()});
+        return false;
+    });
+
+    socket.on('after connect', function(msg){
+        console.log('After connect', msg);
+    });
+
+    socket.on('update value', function(msg) {
+        console.log('Slider value updated');
+        $('#'+msg.who).val(msg.data);
+    });
+});

@@ -11,9 +11,12 @@ import logging
 
 # Socket IO Flask App Setup
 
-app = Flask(__name__, static_folder='static')
+app = Flask(__name__, 
+            static_url_path='', 
+            static_folder='static',
+            template_folder='templates')
 app.config['SECRET_KEY'] = 'secret!'
-socketio = SocketIO(app, logger=False, engineio_logger=False)
+socketio = SocketIO(app, cors_allowed_origins="*", logger=False, engineio_logger=False)
 
 
 # Suppress logs except for error: https://stackoverflow.com/questions/43487264/disabling-logger-in-flask-socket-io
@@ -45,6 +48,9 @@ def index():
 def about():
     return render_template('forecaster.html') # Product Page
 
+@socketio.on('connect')
+def test_connect():
+    emit('after connect',  {'data':'Lets dance'})
 
 @socketio.on('connection_msg')
 def connected(message):
