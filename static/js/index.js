@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     // sending a connect request to the server.
-    var socket = io.connect('http://localhost:8050');
+    var socket = io.connect(window.location.href);
 
     // An event handler for a change of value 
     $('input.sync').on('input', function(event) {

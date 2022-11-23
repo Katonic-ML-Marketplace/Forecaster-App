@@ -81,6 +81,22 @@ $(document).ready(function(){
         
         
     });
+
+    $('a[data-element="primary"]').on('click', function(e) {
+       
+        
+        e.preventDefault();
+        var href = this.getAttribute("href");
+        window.dataLayer.push({'event':'product-page-primary-cta'});
+        
+        // Set a 1 second delay to before navigating to the /app/ page - so that the dataLayer value is successfully set.
+        setTimeout(function(){            
+            
+                window.location.href = href
+
+        }, 1000);
+   
+    });
     
     
     

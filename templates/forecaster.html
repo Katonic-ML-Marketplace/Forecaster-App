@@ -24,16 +24,16 @@
    <!-- Stylesheets -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
-    <link href="/styles/product_page.css" rel="stylesheet"> 
+    <link href="styles/product_page.css" rel="stylesheet"> 
     
     <!-- Scripts -->
-    <script type="text/javascript" src="/js/papaparse.js" ></script>    
+    <script type="text/javascript" src="js/papaparse.js" ></script>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.slim.js"></script>    
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/behaviour_analytics.js" ></script> 
-    <script type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript" src="js/behaviour_analytics.js" ></script> 
+    <script type="text/javascript" src="js/index.js"></script>
     
 </head>
 <body>
@@ -59,8 +59,8 @@
             
             <h1 class='headline'>Upload data. Generate Forecast. </h1>
             <h4 class='subheading'>In 3 simple steps, automate the creation of a time series forecast. <br/> No data from your csv is stored on our servers.</h4>            
-            <a class='primary-cta' data-element='primary' href="/app/">Build a Forecast Now</a>
-            <img id='hero-image' src="/img/app.png"/>
+            <a class='primary-cta' data-element='primary' href="app/">Build a Forecast Now</a>
+            <img id='hero-image' src="img/app.png"/>
             
             
         </div>
@@ -77,9 +77,9 @@
             
             <ul id='three-easy-steps'>
             
-                <li><img class='three-steps-icon' id='step1' src="/img/csv_icon_blue.png"/><h4>Upload Your CSV</h4><p>Choose a csv with 2 columns containing a date and a metric. Then click upload.</p></li>
-                <li><img class='three-steps-icon' id='step2' src="/img/settings_icon_blue.png"/><h4>Build Basic Forecast</h4><p>Choose how long to forecast and the type of forecasting model.</p></li>
-                <li><img class='three-steps-icon' id='step3' src="/img/forecast_icon.png"/><h4>Tweak Forecast w/ Advanced Filters</h4><p>After you've generated your forecast, tweak it with a variety of advanced filters.</p></li>
+                <li><img class='three-steps-icon' id='step1' src="img/csv_icon_blue.png"/><h4>Upload Your CSV</h4><p>Choose a csv with 2 columns containing a date and a metric. Then click upload.</p></li>
+                <li><img class='three-steps-icon' id='step2' src="img/settings_icon_blue.png"/><h4>Build Basic Forecast</h4><p>Choose how long to forecast and the type of forecasting model.</p></li>
+                <li><img class='three-steps-icon' id='step3' src="img/forecast_icon.png"/><h4>Tweak Forecast w/ Advanced Filters</h4><p>After you've generated your forecast, tweak it with a variety of advanced filters.</p></li>
 
             </ul>
 
@@ -110,7 +110,7 @@
                     
                     <div id="builtwithopensource" class="tab-pane fade in active">
 
-                        <img id='open-source-icon' src="/img/heart_opensource_tech.png"/>
+                        <img id='open-source-icon' src="img/heart_opensource_tech.png"/>
                        
                         <div class='features-copy'>    
                             <h4 class='features-title'>Built with Open Source</h4>
@@ -121,7 +121,7 @@
 
                     <div id="private" class="tab-pane fade in">
 
-                        <img id='privacy-mask' src="/img/mask.png"/>
+                        <img id='privacy-mask' src="img/mask.png"/>
 
                         <div class='features-copy'>    
                             <h4 class='features-title'>Private</h4>
@@ -132,7 +132,7 @@
 
                     <div id="export" class="tab-pane fade in">
 
-                        <img id='export-forecast' src="/img/export_data.png"/>
+                        <img id='export-forecast' src="img/export_data.png"/>
                         <div class='features-copy'>    
                             <h4 class='features-title'>Export your Forecast Data</h4>
                             <p class='features-description'>Easily export your forecast by using the 'Download' CTA shown above.</p>
@@ -142,7 +142,7 @@
 
                     <div id="prophet" class="tab-pane fade in">
 
-                        <img id='fb-prophet-icon' src="/img/facebook_prophet_icon.png"/>
+                        <img id='fb-prophet-icon' src="img/facebook_prophet_icon.png"/>
                         <div class='features-copy'>    
                             <h4 class='features-title'>Powered by Facebook Prophet</h4>
                             <p class='features-description'>Thanks to the amazing work done by the Facebook Open Source team, forecaster incorporates most of the hyperparameters as filters. Check out the real library in python: pip install fbprophet </p>
@@ -175,7 +175,6 @@
             <h2>Ready to Forecast?</h2> 
 
             <p>All Set? <a data-element='internal-link' data-val='Link: Build your forecast now' href="app/">Build your forecast now</a>. Need a csv to test it out? Here are a few sample csvs to get you started. </p> 
-
             <table id='sample-csvs' class='table'>
                 <thead>
                     <th></th>    
@@ -185,26 +184,26 @@
                 </thead>
 
                     <tr>
-                        <td><a data-element='download-csv' data-val='Shampoo Sales CSV' href="/sampledata/shampoo_sales.csv"><img class='download-csv-icon' src="/img/download_arrow.png"/></a></td>
+                        <td><a data-element='download-csv' data-val='Shampoo Sales CSV' href="sampledata/shampoo_sales.csv"><img class='download-csv-icon' src="img/download_arrow.png"/></a></td>
                         <td>Shampoo Sales</td>
                         <td>Monthly</td>
 
                     </tr>
                     <tr>
-                        <td><a data-element='download-csv' data-val='Saugeen River Temps CSV' href="/sampledata/mean_temps.csv"><img class='download-csv-icon' src="/img/download_arrow.png"/></a></td>
+                        <td><a data-element='download-csv' data-val='Saugeen River Temps CSV' href="sampledata/mean_temps.csv"><img class='download-csv-icon' src="img/download_arrow.png"/></a></td>
                         <td>Saugeen River Temps</td>
                         <td>Daily</td>
 
                     </tr>
                     <tr>
-                        <td><a data-element='download-csv' data-val='Manning Wikipedia Log Scale PVs CSV' href="/sampledata/example_wp_log_peyton_manning_v2.csv"><img class='download-csv-icon' src="/img/download_arrow.png"/></a></td>
+                        <td><a data-element='download-csv' data-val='Manning Wikipedia Log Scale PVs CSV' href="sampledata/example_wp_log_peyton_manning_v2.csv"><img class='download-csv-icon' src="img/download_arrow.png"/></a></td>
                         <td>Manning Wikipedia Log Scale PVs</td>
                         <td>Daily</td>
 
                     </tr>       
             </table>
             
-            <img id='forecast-fun-graphic' src="/img/forecast_fun.png"/>
+            <img id='forecast-fun-graphic' src="img/forecast_fun.png"/>
 
         </section>
     </div>

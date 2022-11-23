@@ -5,13 +5,14 @@ from flask_socketio import SocketIO, emit
 import pandas as pd
 from helper_v4 import forecaster, determine_timeframe, get_summary_stats, validate_model, preprocessing
 import logging
+import os
 # import time
 
 
 
 # Socket IO Flask App Setup
 
-app = Flask(__name__, 
+app = Flask(__name__,  
             static_url_path='', 
             static_folder='static',
             template_folder='templates')
@@ -46,7 +47,10 @@ def index():
 
 @app.route('/')
 def about():
-    return render_template('forecaster.html') # Product Page
+    print("==========================================")
+    print(os.getenv("ROUTE"))
+    print("==========================================")
+    return render_template('forecaster.html', app_route=os.getenv("ROUTE")) # Product Page
 
 @socketio.on('connect')
 def test_connect():
