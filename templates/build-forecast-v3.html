@@ -29,13 +29,13 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
-    <link href="styles/app.css" rel="stylesheet">
+    <link href="{{app_route}}styles/app.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.slim.js"></script>
-    <script type="text/javascript" src="js/papaparse.js" ></script>
+    <script type="text/javascript" src="{{app_route}}js/papaparse.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/forecaster_v4.js" ></script>
+    <script type="text/javascript" src="{{app_route}}js/forecaster_v4.js" ></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
@@ -91,7 +91,7 @@
                             <h3 class='step-title'>STEP 1: UPLOAD A CSV</h3><br/>
                             <h5>ABOUT CSV FORMAT</h5><br/>
                             <p>Your file should contain 2 columns and look something like this (when viewing in excel):</p><br/>
-                            <img class="csv-example" src="img/csv_file_example.png"/>
+                            <img class="csv-example" src="{{app_route}}img/csv_file_example.png"/>
                             <br/>
                             <br/>
                             <p>The columns should be as follows:</p>
@@ -113,7 +113,7 @@
                         <div id='sample-files'>
 
                             <div class='side-bar-title-section'>
-                                <img class="csv-title-icon" src="img/csv_icon_title.png"/>
+                                <img class="csv-title-icon" src="{{app_route}}img/csv_icon_title.png"/>
                                 <h4 class="side-nav-title">DON'T HAVE A CSV <br/>READY TO USE?</h4>
                             </div>
                             <br>
@@ -129,17 +129,17 @@
                                 </thead>
 
                                     <tr>
-                                        <td><a href="sampledata/shampoo_sales.csv"><img class='download-csv-icon' src="img/download_arrow.png"/></a></td>
+                                        <td><a href="{{app_route}}sampledata/shampoo_sales.csv"><img class='download-csv-icon' src="{{app_route}}img/download_arrow.png"/></a></td>
                                         <td>Shampoos Sales</td>
                                         <td>Monthly</td>
                                     </tr>
                                     <tr>
-                                        <td><a href="sampledata/mean_temps.csv"><img class='download-csv-icon' src="img/download_arrow.png"/></a></td>
+                                        <td><a href="{{app_route}}sampledata/mean_temps.csv"><img class='download-csv-icon' src="{{app_route}}img/download_arrow.png"/></a></td>
                                         <td>Saugeen River Temp</td>
                                         <td>Daily</td>
                                     </tr>
                                     <tr>
-                                        <td><a href="sampledata/example_wp_log_peyton_manning_v2.csv"><img class='download-csv-icon' src="img/download_arrow.png"/></a></td>
+                                        <td><a href="{{app_route}}sampledata/example_wp_log_peyton_manning_v2.csv"><img class='download-csv-icon' src="{{app_route}}img/download_arrow.png"/></a></td>
                                         <td>Manning Wikipedia Log Scale PVs</td>
                                         <td>Daily</td>
                                     </tr>
@@ -153,7 +153,7 @@
 
                             <p>As an example, if you create a basic forecast using the Saugeen Dataset, forecasting out 365 days, it should look like this: </p>
                             <br>
-                            <img id='expected-output-pic' src="img/forecast_output_example.jpg"/>
+                            <img id='expected-output-pic' src="{{app_route}}img/forecast_output_example.jpg"/>
                         </div>
 
                       </div>
@@ -191,7 +191,7 @@
 
                         <div id='build-forecast-sidenav'>
 
-                            <img id="forecast-icon" src="img/forecast_icon.png"/>
+                            <img id="forecast-icon" src="{{app_route}}img/forecast_icon.png"/>
                             <h4 class='side-nav-title build-title'>SETUP BASIC FORECAST</h4>
                             <div id='forecast-out'>
                                 <h5 class='sub-header'><b>Forecast Length</b></h5>
@@ -234,7 +234,7 @@
 
                                 <br/>
                                 <h5 id='chart-title' class='sub-header'>INSERT TITLE</h5>
-                                <img id="loading" src="img/loading.gif"/>
+                                <img id="loading" src="{{app_route}}img/loading.gif"/>
                                 <p id='processing'>
                                 Your forecast is being built. Larger datasets may experience wait times of up to 1 minute in the Alpha Version of this site.
                                 </p>
@@ -267,7 +267,7 @@
 
                             <div class='side-bar-title-section filter-title-section'>
 
-                                <img id='filter-icon' src="img/filter_icon.png"/>
+                                <img id='filter-icon' src="{{app_route}}img/filter_icon.png"/>
                                 <h4>FILTERS</h4>
 
                             </div>
