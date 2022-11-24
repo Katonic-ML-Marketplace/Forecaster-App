@@ -43,18 +43,12 @@ def add_header(r):
 
 @app.route('/app/')
 def index():
-    return render_template('build-forecast-v3.html') # Application
+    return render_template('build-forecast-v3.html',app_route=os.getenv("ROUTE")) # Application
 
 @app.route('/')
 def about():
-    print("==========================================")
-    print(os.getenv("ROUTE"))
-    print("==========================================")
-    return render_template('forecaster.html', app_route=os.getenv("ROUTE")) # Product Page
+    return render_template('forecaster.html' ) # Product Page
 
-@socketio.on('connect')
-def test_connect():
-    emit('after connect',  {'data':'Lets dance'})
 
 @socketio.on('connection_msg')
 def connected(message):
@@ -77,7 +71,7 @@ def forecast_settings(message):
     original_dataset = data[1]['data'][1]['data']
 
     print("******************** ORIGINAL DATASET *****************************")
-    print(original_dataset)
+    #print(original_dataset)
     print("******************** ORIGINAL DATASET *****************************")
 
     # Extract info from forecast_settings message
@@ -89,7 +83,7 @@ def forecast_settings(message):
     # Format the date and metric unit
     time_unit = column_headers[0]
     print("******************** TIME UNIT *****************************")
-    print(time_unit)
+    #print(time_unit)
     time_series_data[time_unit] = time_series_data[time_unit].apply(lambda x: pd.to_datetime(str(x)))
     metric = column_headers[1]
 
@@ -111,7 +105,7 @@ def forecast_settings(message):
     # Send data back to the client
     data_back_to_client = [dates, y_hat, y, forecast_settings, column_headers, freq, original_dataset, csv_export, forecasted_vals, forecasted_vals_mean]
     print("******************** data_back_to_client *****************************")
-    print(data_back_to_client)
+    #print(data_back_to_client)
 
 
     emit('render_forecast_chart', {'data': data_back_to_client})
@@ -138,7 +132,7 @@ def update_chart(message):
     time_series_data = pd.DataFrame(time_series_data)
 
     print("********* TIME SERIES DF ****************")
-    print(time_series_data.head())
+    #print(time_series_data.head())
     print("********* TIME SERIES DF ****************")
 
     forecast_settings = data[1]
