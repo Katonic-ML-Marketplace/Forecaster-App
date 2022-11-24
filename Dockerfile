@@ -1,10 +1,11 @@
-FROM python:3.8.2-slim
+FROM quay.io/katonic/katonic-base-images:py38-base-conda4.9.2
 
 RUN mkdir -p static/img static/js static/sampledata static/styles templates
 
 COPY app.py .
 COPY helper_v4.py .
 COPY static/img/app.png static/img/.
+COPY static/img/logo.png static/img/.
 COPY static/img/camera_button.png static/img/.
 COPY static/img/csv_file_example.png static/img/.
 COPY static/img/csv_icon_blue.png static/img/.
@@ -46,6 +47,6 @@ COPY templates/build-forecast-v3.html templates/.
 COPY templates/forecaster.html templates/.
 COPY requirements.txt .
 
-RUN apt-get update && apt-get -y install gcc build-essential && pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
 CMD python app.py --server.port=8050 --server.address=0.0.0.0 --logger.level error

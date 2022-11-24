@@ -5,19 +5,24 @@ $(document).ready(function(){
     $('#loading').css({ display: "none" });
     $('#processing').css({display:"none"});
 
-
-
-
     // **** Connect SocketIO **** //
 
-    // start up a SocketIO connection to the server - http(s):// needs to be set as http when run locally, and https when pushed to production.
-    var socket = io.connect('https://' + document.domain + ':' + location.port);
+    // start up a SocketIO connection to the server 
+    var Socketroute = window.location.pathname.split("/")
 
-    // The callback function is invoked when a connection with the server is established.
+    Socketroute=`/${Socketroute[1]}/${Socketroute[2]}/socket.io`
+
+    var socket = io.connect(window.location.host,{
+
+        path:Socketroute
+
+    });
+
+    // // The callback function is invoked when a connection with the server is established.
     socket.on('connect', function() {
 
-        // Successful connection message
-        socket.emit('connection_msg', {data: 'I\'m connected!'});
+    //     // Successful connection message
+    socket.emit('connection_msg', {data: 'I\'m connected!'});
 
     });
 

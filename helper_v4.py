@@ -220,8 +220,8 @@ def forecaster(data, forecast_settings, column_headers, freq_val, build_settings
 
     # print(y_hat)
     # print(csv_ready_for_export)
-    print(forecasted_vals)
-    print(forecasted_vals_mean)
+    #print(forecasted_vals)
+    #print(forecasted_vals_mean)
 
     return [y_hat, dates, m, csv_ready_for_export, forecasted_vals, forecasted_vals_mean]
 
@@ -310,10 +310,10 @@ def get_summary_stats(data,column_headers):
 
 
 
-    print(data[metric].mean())
+    #print(data[metric].mean())
 
     mean = str(round(data[metric].mean(), 2))
-    print('string of the mean is ' + mean)
+    #print('string of the mean is ' + mean)
 
 
     std = str(round(data[metric].std(), 2))
@@ -321,7 +321,7 @@ def get_summary_stats(data,column_headers):
     maximum = str(round(data[metric].max(), 2))
 
     sum_stats = [time_unit_count, mean, std, minimum, maximum]
-    print(sum_stats)
+    #print(sum_stats)
 
     return sum_stats
 
@@ -353,11 +353,11 @@ def preprocessing(data):
 
     col1 = column_headers[0]
     col2 = column_headers[1]
-    print('the first column is ' + col1)
+    #print('the first column is ' + col1)
 
     # Get the first value in column 1, which is what is going to be checked.
     col1_val = data[col1][0]
-    print(type(col1_val))
+    #print(type(col1_val))
 
     """
 
@@ -382,7 +382,7 @@ def preprocessing(data):
 
     # If there is a null value in the dataset, locate it and emit the location of the null value back to the client, else continue:
 
-    print(data.tail())
+    #print(data.tail())
 
     do_nulls_exist = data.isnull().values.any()
 
@@ -404,7 +404,7 @@ def preprocessing(data):
 
 
     if isinstance(col1_val, (int, np.integer, float)):
-        print(str(col1_val) + ' this is a metric')
+        #print(str(col1_val) + ' this is a metric')
         print('Setting time_unit as the second column')
         time_unit = column_headers[1]
         metric_unit = column_headers[0]
@@ -453,8 +453,8 @@ def determine_timeframe(data, time_unit):
 
     time_delta = int(str(time_delta).split(' ')[0])
 
-    print([data[time_unit][0],data[time_unit][1]])
-    print([second_date, first_date, time_delta])
+    #print([data[time_unit][0],data[time_unit][1]])
+    #print([second_date, first_date, time_delta])
 
 
     if time_delta == 1:
