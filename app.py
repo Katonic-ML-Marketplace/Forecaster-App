@@ -6,9 +6,9 @@ import pandas as pd
 from helper_v4 import forecaster, determine_timeframe, get_summary_stats, validate_model, preprocessing
 import logging
 import os
+import warnings
+warnings.filterwarnings('ignore')
 # import time
-
-
 
 # Socket IO Flask App Setup
 
@@ -54,8 +54,7 @@ def about():
 def connected(message):
 
     data = message
-    print("******************** DATA *****************************")
-    print(data)
+ 
 
 
 @socketio.on('forecast_settings')
@@ -70,10 +69,6 @@ def forecast_settings(message):
     # Keep Original Data in Exisiting Structure
     original_dataset = data[1]['data'][1]['data']
 
-    print("******************** ORIGINAL DATASET *****************************")
-    #print(original_dataset)
-    print("******************** ORIGINAL DATASET *****************************")
-
     # Extract info from forecast_settings message
     time_series_data = pd.DataFrame(data[1]['data'][1]['data'])
     forecast_settings = data[0]
@@ -82,8 +77,6 @@ def forecast_settings(message):
 
     # Format the date and metric unit
     time_unit = column_headers[0]
-    print("******************** TIME UNIT *****************************")
-    #print(time_unit)
     time_series_data[time_unit] = time_series_data[time_unit].apply(lambda x: pd.to_datetime(str(x)))
     metric = column_headers[1]
 
@@ -104,9 +97,6 @@ def forecast_settings(message):
 
     # Send data back to the client
     data_back_to_client = [dates, y_hat, y, forecast_settings, column_headers, freq, original_dataset, csv_export, forecasted_vals, forecasted_vals_mean]
-    print("******************** data_back_to_client *****************************")
-    #print(data_back_to_client)
-
 
     emit('render_forecast_chart', {'data': data_back_to_client})
 
@@ -130,10 +120,6 @@ def update_chart(message):
     time_series_data = data[4]
     original_dataset = time_series_data
     time_series_data = pd.DataFrame(time_series_data)
-
-    print("********* TIME SERIES DF ****************")
-    #print(time_series_data.head())
-    print("********* TIME SERIES DF ****************")
 
     forecast_settings = data[1]
     column_headers = data[2]
