@@ -1,13 +1,13 @@
 FROM quay.io/katonic/katonic-base-images:py38-base-conda4.9.2
 
-COPY app.py .
-COPY helper_v4.py .
-COPY static/img static/img
-COPY static/js static/js
-COPY static/sampledata static/sampledata
-COPY static/styles static/styles
-COPY templates templates
-COPY requirements.txt .
+ADD app.py .
+ADD helper_v4.py .
+ADD static/img static/img
+ADD static/js static/js
+ADD static/sampledata static/sampledata
+ADD static/styles static/styles
+ADD templates templates
+ADD requirements.txt .
 
 RUN pip install -r requirements.txt
 
